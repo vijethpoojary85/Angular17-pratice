@@ -1,6 +1,9 @@
 <div>
+    <h1>Parent component</h1>
+    Parent component: <input type="text" #Pcomponent (keyup)="0">
 
-<p class="fg">  {{title}} welcome to the root
-</p>
-<app-employee> </app-employee>
-</div>
+
+
+    <app-employee [Pdata]="Pcomponent.value"></app-employee>
+  </div>
+  

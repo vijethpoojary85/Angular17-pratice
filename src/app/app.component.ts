@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { EmployeeComponent } from './employee/employee.component';
@@ -8,20 +8,21 @@ import { EmployeeComponent } from './employee/employee.component';
   standalone: true,
   imports: [CommonModule, RouterOutlet, EmployeeComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  encapsulation:ViewEncapsulation.None
 })
 export class AppComponent {
   title = 'my-todolist';
   constructor(){
-  console.log("constructir loaded in the compoentns");
+  console.log("constructor loaded in the compoentns");
 
     }
 
 
-    @HostListener('click',['$event'])
-    show(){
-      alert("hello");
-    }
+    // @HostListener('click',['$event'])
+    // show(){
+    //   alert("hiiiiiiii guyzzz");
+    // }
   }
 
 

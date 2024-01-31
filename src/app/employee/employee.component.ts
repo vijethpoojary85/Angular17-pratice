@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
+import { StudentComponent } from '../student/student.component';
 
 @Component({
   selector: 'app-employee',
   standalone: true,
-  imports: [],
+  imports: [StudentComponent],
   templateUrl: './employee.component.html',
-  styleUrl: './employee.component.css'
+  styleUrl: './employee.component.css',
+  inputs:['Pdata']
 })
 export class EmployeeComponent {
-
+Pdata:any;
 }
