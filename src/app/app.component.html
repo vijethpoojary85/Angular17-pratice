@@ -1,9 +1,21 @@
 <div>
     <h1>Parent component</h1>
-    Parent component: <input type="text" #Pcomponent (keyup)="0">
+    Parent component: <input type="text"  (keyup)="0">
+
+
+    child value:  {{childValue}}
+
+    <div style="margin-top: 50px;margin-left: 40px;" >
+      <button (click)="childBoxOpen()">  model </button>
+  </div>
 
 
 
-    <app-employee [Pdata]="Pcomponent.value"></app-employee>
+    <!-- <app-employee (valueChanged)="onValueChanged($event)"></app-employee> -->
+
+
+
+    <app-employee [isChildVisible]="isChildOpen"  (valueChanged)="onValueChanged($event)"></app-employee>
+
   </div>
   

@@ -13,16 +13,29 @@ import { EmployeeComponent } from './employee/employee.component';
 })
 export class AppComponent {
   title = 'my-todolist';
+  childValue: string=''
+
+  isChildOpen=false
   constructor(){
   console.log("constructor loaded in the compoentns");
 
     }
 
 
+
+    onValueChanged(value: any) {
+      this.childValue = value;
+      this.isChildOpen=value
+    }
+
     // @HostListener('click',['$event'])
     // show(){
     //   alert("hiiiiiiii guyzzz");
     // }
+
+    childBoxOpen(){
+this.isChildOpen=true
+    }
   }
 
 
