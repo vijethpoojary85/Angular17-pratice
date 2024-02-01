@@ -2,8 +2,15 @@
     <h1>Parent component</h1>
     Parent component: <input type="text"  >
 
-    <ul>
-      <li *ngFor="let item of items">{{item}}</li>
+    <ul style="margin-top: 40px;">
+      <li *ngFor="let item of items; let i=index">
+        
+        
+        {{item}} 
+
+      <button style="margin-left: 50px;" (click)="delete(i)"  >delete</button>
+      
+      </li>
     </ul>
     <!-- child value:  {{childValue}}
 
@@ -13,7 +20,8 @@
 
 
 
-     <app-employee (newItemEvent)="addItem($event)"></app-employee>
+  <app-employee (newItemEvent)="addItem($event)" (removeItemEvent)="removeItem($event)"></app-employee>
+
 
 
 

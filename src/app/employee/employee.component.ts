@@ -15,12 +15,18 @@ export class EmployeeComponent  {
 
   @Input() item = ''; 
   @Output() newItemEvent = new EventEmitter<string>();
+  @Output() removeItemEvent = new EventEmitter<string>();
+
   // @Input() isChildVisible: boolean=false
 // senddata(val:any){
 // console.log(" fhds",val);
 // }
 addNewItem(value: any) {
   this.newItemEvent.emit(value);
+}
+remNewItem(itemToRemove: string) {
+  console.log("refldj",itemToRemove);
+  this.removeItemEvent.emit(itemToRemove);
 }
 // @Output() valueChanged = new EventEmitter<any>();
 //  valueChanged = new EventEmitter<any>();

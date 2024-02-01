@@ -13,6 +13,12 @@ value of employee component:
   <input type="text" id="item-input" #newItem>
   <button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
 
+
+  <label for="item-input">Remove an item:</label>
+  <input type="text" id="rem-item-input" #remItem>
+  <button type="button" (click)="remNewItem(remItem.value)">Remove from parent's list</button>
+  
+
 <!-- <input type="text" (keyup)="onInputChange($event)"> -->
 
 <!-- <div style="margin-top: 50px;margin-left: 40px; height: 150px;  width: 200px; background: #ce7676;"   

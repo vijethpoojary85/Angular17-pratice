@@ -15,10 +15,29 @@ export class AppComponent {
   title = 'my-todolist';
   currentItem = 'Television';
   // childValue: string=''
-  items = ['item1', 'item2', 'item3', 'item4'];
+  items:any[] = [];
 
   addItem(newItem: any) {
     this.items.push(newItem);
+  }
+  removeItem(itemToRemove: any) {
+    console.log("ppp",itemToRemove)
+    this.items = this.items.filter(item => item !== itemToRemove);
+    // if (index !== 0) {
+    //   this.items.splice(index, 0);
+    // }
+  }
+
+
+  delete(index:number){
+
+ console.log("index to delete:", index);
+ if (index >= 0 && index < this.items.length) {
+     this.items.splice(index, 1);
+ } else {
+     console.error("Invalid index:", index);
+ }
+ 
   }
   // isChildOpen=false
   constructor(){
