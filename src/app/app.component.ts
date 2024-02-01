@@ -13,9 +13,14 @@ import { EmployeeComponent } from './employee/employee.component';
 })
 export class AppComponent {
   title = 'my-todolist';
-  childValue: string=''
+  currentItem = 'Television';
+  // childValue: string=''
+  items = ['item1', 'item2', 'item3', 'item4'];
 
-  isChildOpen=false
+  addItem(newItem: any) {
+    this.items.push(newItem);
+  }
+  // isChildOpen=false
   constructor(){
   console.log("constructor loaded in the compoentns");
 
@@ -23,19 +28,19 @@ export class AppComponent {
 
 
 
-    onValueChanged(value: any) {
-      this.childValue = value;
-      this.isChildOpen=value
-    }
+    // onValueChanged(value: any) {
+    //   this.childValue = value;
+    //   this.isChildOpen=value
+    // }
 
     // @HostListener('click',['$event'])
     // show(){
     //   alert("hiiiiiiii guyzzz");
     // }
 
-    childBoxOpen(){
-this.isChildOpen=true
-    }
+//     childBoxOpen(){
+// this.isChildOpen=true
+//     }
   }
 
 

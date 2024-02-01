@@ -1,21 +1,23 @@
 <div>
     <h1>Parent component</h1>
-    Parent component: <input type="text"  (keyup)="0">
+    Parent component: <input type="text"  >
 
-
-    child value:  {{childValue}}
+    <ul>
+      <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+    <!-- child value:  {{childValue}}
 
     <div style="margin-top: 50px;margin-left: 40px;" >
       <button (click)="childBoxOpen()">  model </button>
-  </div>
+  </div> -->
 
 
 
-    <!-- <app-employee (valueChanged)="onValueChanged($event)"></app-employee> -->
+     <app-employee (newItemEvent)="addItem($event)"></app-employee>
 
 
 
-    <app-employee [isChildVisible]="isChildOpen"  (valueChanged)="onValueChanged($event)"></app-employee>
+    <!-- <app-employee [isChildVisible]="isChildOpen"  (valueChanged)="onValueChanged($event)"></app-employee> -->
 
   </div>
   

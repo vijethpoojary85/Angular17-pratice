@@ -12,23 +12,28 @@ import { CommonModule } from '@angular/common';
 
 })
 export class EmployeeComponent  {
-  @Input() isChildVisible: boolean=false
+
+  @Input() item = ''; 
+  @Output() newItemEvent = new EventEmitter<string>();
+  // @Input() isChildVisible: boolean=false
 // senddata(val:any){
 // console.log(" fhds",val);
 // }
-
+addNewItem(value: any) {
+  this.newItemEvent.emit(value);
+}
 // @Output() valueChanged = new EventEmitter<any>();
- valueChanged = new EventEmitter<any>();
+//  valueChanged = new EventEmitter<any>();
 
-xyz(){
-  this.isChildVisible=false;
-  this.valueChanged.emit(false);
-}
-onInputChange(event: Event) {
-  const value = (event.target as HTMLInputElement)?.value;
-  if (value !== undefined) {
-    console.log("value", value);
-    this.valueChanged.emit(false);
-  }
-}
+// xyz(){
+//   this.isChildVisible=false;
+//   this.valueChanged.emit(false);
+// }
+// onInputChange(event: Event) {
+//   const value = (event.target as HTMLInputElement)?.value;
+//   if (value !== undefined) {
+//     console.log("value", value);
+//     this.valueChanged.emit(false);
+//   }
+// }
 }
